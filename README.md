@@ -1,2 +1,2 @@
 # ProjetoKanban
-Created with CodeSandbox
+Lista de tarefas para você se organizar.
