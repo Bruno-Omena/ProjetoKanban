@@ -1,6 +1,6 @@
 import "./tasklist.css";
 import PropTypes from "prop-types";
-import TaskItens from "./components/TaskItens/TaskItens";
+import Taskitens from "../../components/TaskItens/TaskItens";
 
 export default function TaskList({ title, onAddTask, tasks }) {
   const addTask = () => {
