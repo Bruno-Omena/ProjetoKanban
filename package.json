@@ -1,11 +1,8 @@
 {
-  "name": "kanban",
+  "name": "lista-de-tarefas",
   "version": "1.0.0",
-  "description": "Exemplo de um desenvolvimento de um kanban no react",
-  "keywords": [
-    "react",
-    "starter"
-  ],
+  "description": "",
+  "keywords": [],
   "main": "src/index.js",
   "dependencies": {
     "prop-types": "15.8.1",
