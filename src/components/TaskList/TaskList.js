@@ -1,32 +1,48 @@
 import "./tasklist.css";
 import PropTypes from "prop-types";
-import Taskitens from "../../components/TaskItens/TaskItens";
+import TaskItens from "../TaskItens/TaskItens";
+import plusIcon from "../../img/plus.ico";
 
-export default function TaskList({ title, onAddTask, tasks }) {
+export default function Tasklist({
+  title,
+  taskState,
+  onAddTasks,
+  tasks,
+  onTaskUpdate,
+  onDeleteTask
+}) {
   const addTask = () => {
-    onAddTask("Nova tarefa", "Pendente");
+    onAddTasks("Nova Tarefa", taskState);
   };
+
   return (
     <div className="tasklist">
       <div className="title">{title}</div>
       <div className="content">
         {tasks.map((task) => {
           return (
-            <Taskitens
+            <TaskItens
               key={task.id}
               id={task.id}
               title={task.title}
-              taskstate={task.state}
+              taskState={task.state}
+              onTaskUpdate={onTaskUpdate}
+              onDeleteTask={onDeleteTask}
             />
           );
         })}
-        <button onClick={onAddTask}> Adicionar Tarefa </button>
+        {tasks.length === 0 && <div className="empty-list">Lista vazia</div>}
+        <button onClick={addTask} className="btn">
+          <img src={plusIcon} alt="cachorro" />
+          Adicionar Tarefa
+        </button>
       </div>
     </div>
   );
 }
-TaskList.propTypes = {
+
+Tasklist.propTypes = {
   title: PropTypes.string.isRequired,
   onAddTask: PropTypes.func.isRequired,
-  task: PropTypes.array.isRequired
+  tasks: PropTypes.array.isRequired
 };
